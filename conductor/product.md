@@ -13,7 +13,7 @@ Genie is a high-fidelity AI-to-3D pipeline that transforms text prompts into imm
 - **AI Pipeline Integration:**
     - **Nano Banana:** Initial image generation from text prompts.
     - **Review & Refine:** A dedicated interface to view generated images and iterate using prompt refinement.
-    - **Marble World Labs:** Conversion of 2D imagery into high-quality 3D Gaussian Splats.
+    - **Marble World Labs:** Conversion of 2D imagery into high-quality 3D Gaussian Splats (with user-selectable Mini/Plus models).
     - **Decart Realtime:** A real-time AI generation layer for visual polish and enhancement.
 - **Interactive 3D Exploration:** First-person exploration of the generated splat scenes (already implemented in the core engine).
 

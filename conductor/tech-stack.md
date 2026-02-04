@@ -11,6 +11,7 @@
 
 ## Backend
 - **Runtime:** Node.js
+- **API Server:** Express
 - **Real-time Communication:** Socket.io
 
 ## AI Pipeline Integrations
