@@ -58,7 +58,7 @@ function App() {
             gl={{ antialias: false }}
             dpr={1}
             camera={{
-              position: [0, 1.5, 5],
+              position: [0, 1.5, 0],
               rotation: [0, 0, 0],
             }}
           >
