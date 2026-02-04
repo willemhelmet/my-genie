@@ -8,6 +8,7 @@ interface DecartStreamProps {
 
 export const DecartStream = ({ canvasId }: DecartStreamProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sourceVideoRef = useRef<HTMLVideoElement>(null);
   const [isConnected, setIsConnected] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const prompt = useMyStore((state) => state.prompt);
@@ -29,6 +30,10 @@ export const DecartStream = ({ canvasId }: DecartStreamProps) => {
       try {
         const stream = captureCanvasStream(canvas, 25);
         
+        if (sourceVideoRef.current) {
+          sourceVideoRef.current.srcObject = stream;
+        }
+
         clientRef.current = await decartService.connect(
           stream,
           (remoteStream) => {
@@ -87,6 +92,18 @@ export const DecartStream = ({ canvasId }: DecartStreamProps) => {
         muted // Muted to avoid autoplay blocks, though audio isn't used
         className={`w-full h-full object-cover transition-opacity duration-1000 ${isConnected ? "opacity-100" : "opacity-0"}`}
       />
+
+      {/* Source Preview Thumbnail */}
+      <div className="absolute top-4 right-4 w-48 aspect-video border border-blue-500/50 bg-black overflow-hidden pointer-events-auto">
+          <div className="absolute top-0 left-0 z-20 bg-blue-600 text-[10px] px-1 font-bold">SOURCE_FEED</div>
+          <video
+            ref={sourceVideoRef}
+            autoPlay
+            playsInline
+            muted
+            className="w-full h-full object-cover opacity-60"
+          />
+      </div>
       
       {!isConnected && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm">
