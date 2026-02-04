@@ -8,7 +8,6 @@ export const ReviewScreen = () => {
   const prompt = useMyStore((state) => state.prompt);
   const setGeneratedImage = useMyStore((state) => state.setGeneratedImage);
   const setSceneUrl = useMyStore((state) => state.setSceneUrl);
-  const startGame = useMyStore((state) => state.start);
   
   const [refinementPrompt, setRefinementPrompt] = useState(prompt);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -42,7 +41,7 @@ export const ReviewScreen = () => {
       const polishedUrl = await polishEnvironment(splatUrl);
       
       setSceneUrl(polishedUrl);
-      startGame(); // Set status to playing
+      useMyStore.getState().setGameStatus("intro");
       setLocation("/world");
     } catch (e) {
       console.error(e);
