@@ -1,0 +1,8 @@
+{
+  "track_id": "multi_screen_pipeline_20260204",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-02-04T12:00:00Z",
+  "updated_at": "2026-02-04T12:00:00Z",
+  "description": "Implement the sequential multi-screen flow (Hero, Generate, Review/Edit) and integrate the placeholder service layer for Nano Banana, Marble World Labs, and Decart Realtime APIs."
+}
