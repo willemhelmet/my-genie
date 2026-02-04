@@ -14,16 +14,22 @@ export const Scene = () => {
   }, [renderer]);
   return (
     <>
-      <ambientLight intensity={1} />
-      <directionalLight intensity={1} position={[1, 1, 1]} />
-      <color attach="background" args={[0, 0, 0]} />
+      {/* <ambientLight intensity={1} /> */}
+      {/* <directionalLight intensity={1} position={[1, 1, 1]} /> */}
+      {/* <color attach="background" args={[0, 0, 0]} /> */}
       <axesHelper />
-      <Grid infiniteGrid={true} sectionColor={"#bbb"} cellColor={"#444"} />
+      {/* <Grid infiniteGrid={true} sectionColor={"#bbb"} cellColor={"#444"} /> */}
       <Player />
       <FloorCollider />
       <RemotePlayerManager />
       <SparkRenderer args={[sparkRendererArgs]}>
-        <Splat />
+        <group
+          position={[0, 1.5, 0]}
+          rotation={[Math.PI, 0, 0]}
+          scale={[2, 2, 2]}
+        >
+          <Splat />
+        </group>
       </SparkRenderer>
     </>
   );
