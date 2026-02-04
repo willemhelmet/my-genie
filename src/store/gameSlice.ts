@@ -12,7 +12,7 @@ export interface GameSlice {
   pause: () => void;
   resume: () => void;
   setPrompt: (prompt: string) => void;
-  setGeneratedImage: (url: string) => void;
+  setGeneratedImage: (url: string | null) => void;
   setSceneUrl: (url: string) => void;
   setGameStatus: (status: GameStatus) => void;
 }
