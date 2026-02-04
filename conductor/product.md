@@ -12,6 +12,7 @@ Genie is a high-fidelity AI-to-3D pipeline that transforms text prompts into imm
 - **Hero Gallery:** An immersive intro screen showcasing community worlds with a clear path to start a new creation.
 - **AI Pipeline Integration:**
     - **Nano Banana:** Initial image generation from text prompts.
+    - **User Upload:** Option to upload existing 2D images directly.
     - **Review & Refine:** A dedicated interface to view generated images and iterate using prompt refinement.
     - **Marble World Labs:** Conversion of 2D imagery into high-quality 3D Gaussian Splats (with user-selectable Mini/Plus models).
     - **Decart Realtime:** A real-time AI generation layer for visual polish and enhancement.
