@@ -9,11 +9,6 @@
 - **Build Tool:** Vite
 - **Language:** TypeScript
 
-## Backend
-- **Runtime:** Node.js
-- **API Server:** Express
-- **Real-time Communication:** Socket.io
-
 ## AI Pipeline Integrations
 - **Image Generation:** Nano Banana API
   - SDK: @google/genai
