@@ -15,6 +15,7 @@
 
 ## AI Pipeline Integrations
 - **Image Generation:** Nano Banana API
+  - SDK: @google/genai
 - **3D Reconstruction:** Marble World Labs API (Gaussian Splatting)
 - **Visual Enhancement:** Decart Realtime API
 
