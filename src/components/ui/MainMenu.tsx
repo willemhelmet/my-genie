@@ -14,9 +14,7 @@ export const MainMenu = () => {
     <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-6 bg-black text-white p-4 font-mono">
       {/* Hero Section */}
       <div className="text-center space-y-4">
-        <h1 className="text-6xl font-bold tracking-tighter text-white">
-          MY GENIE
-        </h1>
+        <h1 className="text-6xl font-bold tracking-tighter text-white">GYRE</h1>
         <p className="text-xl text-blue-400">AI-Powered World Creation</p>
       </div>
 
