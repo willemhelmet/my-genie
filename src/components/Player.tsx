@@ -10,6 +10,7 @@ export const Player = () => {
 
   useEffect(() => {
     // Ensure rotation order avoids gimbal lock issues
+    // eslint-disable-next-line react-hooks/immutability
     camera.rotation.order = "YXZ";
   }, [camera]);
 

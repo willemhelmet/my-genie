@@ -2,6 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { captureCanvasStream, decartService } from "../services/decartService";
 import { useMyStore } from "../store/store";
 
+interface DecartClient {
+  disconnect(): void;
+  setPrompt(prompt: string): void;
+}
+
 interface DecartStreamProps {
   canvasId: string;
 }
@@ -13,10 +18,11 @@ export const DecartStream = ({ canvasId }: DecartStreamProps) => {
   const [error, setError] = useState<string | null>(null);
   const prompt = useMyStore((state) => state.prompt);
   const [currentPrompt, setCurrentPrompt] = useState(prompt || "");
-  const clientRef = useRef<any>(null); // Store the realtime client
+  const clientRef = useRef<DecartClient | null>(null);
+  const promptRef = useRef(prompt);
 
   useEffect(() => {
-    if (prompt) setCurrentPrompt(prompt);
+    promptRef.current = prompt;
   }, [prompt]);
 
   useEffect(() => {
@@ -42,12 +48,12 @@ export const DecartStream = ({ canvasId }: DecartStreamProps) => {
               setIsConnected(true);
             }
           },
-          prompt || "Cinematic lighting, high fidelity, 8k"
+          promptRef.current || "Cinematic lighting, high fidelity, 8k"
         );
 
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error("Decart connection failed:", err);
-        setError(err.message || "Failed to connect to Decart");
+        setError(err instanceof Error ? err.message : "Failed to connect to Decart");
       }
     };
 

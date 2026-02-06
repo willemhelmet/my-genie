@@ -86,7 +86,7 @@ export const MainMenu = () => {
                         </div>
                         <div className="flex-1">
                             <h3 className="font-bold text-blue-400 group-hover:text-white transition-colors">{template.name}</h3>
-                            <p className="text-xs text-gray-500 line-clamp-1">{template.description}</p>
+                            <p className="text-xs text-gray-500 line-clamp-1">{template.defaultPrompt}</p>
                         </div>
                         {isLoading === template.id && (
                             <div className="text-xs text-blue-400 animate-pulse mr-2">LOADING...</div>

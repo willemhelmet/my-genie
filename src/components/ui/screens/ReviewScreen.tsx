@@ -26,9 +26,9 @@ export const ReviewScreen = () => {
       const newUrl = await generateImage(refinementPrompt);
       setGeneratedImage(newUrl);
       setPipelineStatus("");
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.error(e);
-      setPipelineStatus(`Error: ${e.message}`);
+      setPipelineStatus(`Error: ${e instanceof Error ? e.message : "Unknown error"}`);
     } finally {
       setIsProcessing(false);
     }
@@ -51,9 +51,9 @@ export const ReviewScreen = () => {
       setSceneUrl(polishedUrl);
       useMyStore.getState().setGameStatus("intro");
       setLocation("/world");
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.error(e);
-      setPipelineStatus(`Error: ${e.message}`);
+      setPipelineStatus(`Error: ${e instanceof Error ? e.message : "Unknown error"}`);
     } finally {
       setIsProcessing(false);
     }

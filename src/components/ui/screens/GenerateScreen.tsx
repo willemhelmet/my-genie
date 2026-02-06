@@ -24,9 +24,9 @@ export const GenerateScreen = () => {
       const imageUrl = await generateImage(inputPrompt);
       setGeneratedImage(imageUrl);
       setLocation("/review");
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Generation failed:", error);
-      setError(error.message || "Failed to generate image. Please try again.");
+      setError(error instanceof Error ? error.message : "Failed to generate image. Please try again.");
     } finally {
       setIsGenerating(false);
     }
